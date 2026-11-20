@@ -36,7 +36,15 @@ node benchmark.mjs
 
 The command downloads the public Delaney CSV and writes summary.json and predictions.csv under results/. To reuse a local copy, run `node benchmark.mjs esol.csv`. See [the verified summary](benchmark-results.json) for full precision, fold sizes, input hash and the five largest ridge errors.
 
-For the RDKit experiment, Python 3.11 and the pinned RDKit version regenerate descriptors from SMILES and add Bemis–Murcko scaffold groups. All ring-free compounds share one group. The large groups may produce uneven test folds. The RDKit path is wired into GitHub Actions and its metrics are pending a successful run.
+For the RDKit experiment, Python 3.11 and the pinned RDKit version regenerate descriptors from SMILES and add Bemis–Murcko scaffold groups. All ring-free compounds share one group. The large groups may produce uneven test folds. The [RDKit scaffold benchmark](https://github.com/nisoo0411/solubility-audit/actions/runs/44654418835) evaluated 1,128 records across 269 scaffold groups using five-fold cross-validation. Each test fold held out entire scaffold groups.
+
+| Model | MAE (logS) | RMSE (logS) |
+|---|---:|---:|
+| Training-mean baseline | 1.762 | 2.210 |
+| Ridge regression | 1.009 | 1.293 |
+| 8-nearest neighbors | **0.988** | **1.232** |
+
+The nearest-neighbor model had 44% lower MAE than the scaffold benchmark baseline. Its MAE increased from 0.709 in the exact-SMILES benchmark to 0.988 in the scaffold benchmark. Both the grouping method and the descriptor source changed between runs.
 
 ```sh
 python -m pip install -r requirements.txt
