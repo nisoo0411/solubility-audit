@@ -1,0 +1,186 @@
+{
+  "rows": 1128,
+  "groupField": "smiles",
+  "groups": 1123,
+  "foldSizes": [
+    226,
+    226,
+    226,
+    225,
+    225
+  ],
+  "dataSha256": "80cb066574549a9b7c009d4f3fbfd6693f024998bf35801ae1ee111d44ed6465",
+  "features": [
+    "Minimum Degree",
+    "Molecular Weight",
+    "Number of H-Bond Donors",
+    "Number of Rings",
+    "Number of Rotatable Bonds",
+    "Polar Surface Area"
+  ],
+  "models": {
+    "mean": {
+      "n": 1128,
+      "mae": 1.6604105018151982,
+      "rmse": 2.0967785516774677
+    },
+    "ridge": {
+      "n": 1128,
+      "mae": 0.92852347735737,
+      "rmse": 1.1889068007924326
+    },
+    "knn": {
+      "n": 1128,
+      "mae": 0.7094253102836886,
+      "rmse": 0.9383109636381742
+    }
+  },
+  "donorSlices": [
+    {
+      "label": "0 donors",
+      "ridge": {
+        "n": 635,
+        "mae": 1.0115426174914177,
+        "rmse": 1.2552478869212071
+      },
+      "knn": {
+        "n": 635,
+        "mae": 0.7703899606299215,
+        "rmse": 1.0076133229506237
+      }
+    },
+    {
+      "label": "1 donor",
+      "ridge": {
+        "n": 307,
+        "mae": 0.7511534587713817,
+        "rmse": 0.9656428710174069
+      },
+      "knn": {
+        "n": 307,
+        "mae": 0.5915724755700325,
+        "rmse": 0.8070149452423186
+      }
+    },
+    {
+      "label": "2+ donors",
+      "ridge": {
+        "n": 186,
+        "mae": 0.937853809189515,
+        "rmse": 1.2860378925533977
+      },
+      "knn": {
+        "n": 186,
+        "mae": 0.6958138440860213,
+        "rmse": 0.8934517005861268
+      }
+    }
+  ],
+  "topRidgeErrors": [
+    {
+      "id": "Digoxin (L1=41,8mg/mL, L2=68,2mg/mL, Z=40,1mg/mL)",
+      "smiles": "CC1OC(CC(O)C1O)OC2C(O)CC(OC2C)OC8C(O)CC(OC7CCC3(C)C(CCC4C3CC(O)C5(C)C(CCC45O)C6=CC(=O)OC6)C7)OC8C",
+      "group": "CC1OC(CC(O)C1O)OC2C(O)CC(OC2C)OC8C(O)CC(OC7CCC3(C)C(CCC4C3CC(O)C5(C)C(CCC45O)C6=CC(=O)OC6)C7)OC8C",
+      "y": -4.081,
+      "x": [
+        1,
+        780.9490000000001,
+        6,
+        8,
+        7,
+        203.05999999999997
+      ],
+      "fold": 3,
+      "predictions": {
+        "mean": -3.0811552106430193,
+        "ridge": -8.789107336517457,
+        "knn": -3.322625
+      },
+      "absError": 4.708107336517457
+    },
+    {
+      "id": "vamidothion",
+      "smiles": "CNC(=O)C(C)SCCSP(=O)(OC)(OC)",
+      "group": "CNC(=O)C(C)SCCSP(=O)(OC)(OC)",
+      "y": 1.1440000000000001,
+      "x": [
+        1,
+        287.34299999999996,
+        1,
+        0,
+        8,
+        64.63000000000001
+      ],
+      "fold": 3,
+      "predictions": {
+        "mean": -3.0811552106430193,
+        "ridge": -3.4787811563191378,
+        "knn": -2.75625
+      },
+      "absError": 4.622781156319138
+    },
+    {
+      "id": "uric acid",
+      "smiles": "O=c2[nH]c(=O)c1[nH]c(=O)[nH]c1[nH]2",
+      "group": "O=c2[nH]c(=O)c1[nH]c(=O)[nH]c1[nH]2",
+      "y": -3.93,
+      "x": [
+        1,
+        168.112,
+        4,
+        2,
+        0,
+        114.36999999999998
+      ],
+      "fold": 5,
+      "predictions": {
+        "mean": -3.048449612403098,
+        "ridge": 0.43804201048372793,
+        "knn": -1.87675
+      },
+      "absError": 4.3680420104837285
+    },
+    {
+      "id": "Dimecron",
+      "smiles": "CCN(CC)C(=O)C(=CCOP(=O)(OC)OC)Cl",
+      "group": "CCN(CC)C(=O)C(=CCOP(=O)(OC)OC)Cl",
+      "y": 0.523,
+      "x": [
+        1,
+        299.6909999999999,
+        0,
+        0,
+        8,
+        65.07000000000001
+      ],
+      "fold": 1,
+      "predictions": {
+        "mean": -3.007781596452333,
+        "ridge": -3.790079982357003,
+        "knn": -3.57925
+      },
+      "absError": 4.313079982357003
+    },
+    {
+      "id": "norbormide",
+      "smiles": "OC(C1=CC2C5C(C1C2=C(c3ccccc3)c4ccccn4)C(=O)NC5=O)(c6ccccc6)c7ccccn7",
+      "group": "OC(C1=CC2C5C(C1C2=C(c3ccccc3)c4ccccn4)C(=O)NC5=O)(c6ccccc6)c7ccccn7",
+      "y": -3.931,
+      "x": [
+        1,
+        511.5810000000002,
+        2,
+        7,
+        5,
+        92.18
+      ],
+      "fold": 3,
+      "predictions": {
+        "mean": -3.0811552106430193,
+        "ridge": -8.18171255976379,
+        "knn": -4.761375
+      },
+      "absError": 4.25071255976379
+    }
+  ]
+}
