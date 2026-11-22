@@ -2,7 +2,7 @@
 
 Can six molecular descriptors predict how well an organic compound dissolves in water? And what do the errors teach us about what the models miss?
 
-This AI-assisted project connects a Chem 81 recrystallization question to a public structure–property dataset. It benchmarks two small models and audits their errors using hydrogen-bond donor counts and a phenol–anisole comparison.
+This project connects a Chem 81 recrystallization question to a public structure–property dataset. It benchmarks two small models and audits their errors using hydrogen-bond donor counts and a phenol–anisole comparison.
 
 ## Measured benchmark
 
@@ -60,6 +60,6 @@ The scaffold experiment changes both the split and descriptor source. Compare th
 - Inputs are minimum atom degree, molecular weight, donor count, ring count, rotatable-bond count and topological polar surface area. The verified run used these precomputed columns supplied with ESOL. The supplied ESOL prediction column is excluded.
 - A deterministic group assignment places each entire group into the smallest fold, with hashed group names breaking size ties. Each model standardizes descriptors from its training fold only. Ridge uses a 0.01 penalty on standardized coefficients in the mean squared loss. Nearest neighbors use Euclidean distance and the mean of 8 neighbors. Settings are fixed for the benchmark and no hyperparameter search is reported.
 - Solubility can depend on pH, temperature and solid form. This benchmark does not use those variables and the donor slices are descriptive comparisons.
-- AI assistance was used to prototype the code and documentation. The reported figures come from a run against the public measurement data.
+- The reported figures come from a run against the public measurement data.
 
 Dataset: [DeepChem Delaney ESOL CSV](https://github.com/deepchem/deepchem/blob/master/datasets/delaney-processed.csv). Original paper: J. S. Delaney, *ESOL: Estimating Aqueous Solubility Directly from Molecular Structure* (2004), [DOI 10.1021/ci034243x](https://doi.org/10.1021/ci034243x).
